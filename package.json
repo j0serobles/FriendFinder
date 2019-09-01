@@ -1,0 +1,16 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "UCF BootCamp HW12 Node and Express",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jose Robles",
+  "license": "ISC"
+}
