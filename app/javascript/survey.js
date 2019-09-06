@@ -44,16 +44,22 @@ $( document ).ready( function() {
         var minDifference  = 40;  // Maximum possible difference between two persons is 40.
                                   // (Min. Global Score = 10, Max. Global Score = 50). 
         
-        //Traverses the friends[] array, comparing each 'sscores' array with the currentUser's
+        
+        //Get the current user's global score:
         var currentUserGlobalScore = getGlobalScore( currentUserObj.scores ); 
+
+        //Traverse the friends[] array, comparing each person's global score with with the current user's.
         personsArray.forEach ( function ( person, index ) {
           var personGlobalScore = getGlobalScore( person.scores ); 
           var difference = Math.abs ( personGlobalScore - currentUserGlobalScore ) ; 
+        
+          //If the difference is less than the minimum found so far, this is the new 'top' friend.
           if (difference <= minDifference) {
               minDifference = difference;
               topFriend     = person; 
           }
-          console.log ( `${currentUserObj.name}(${currentUserGlobalScore})   -  ${person.name}(${personGlobalScore}) = ${difference}`)
+
+          //console.log ( `${currentUserObj.name}(${currentUserGlobalScore})   -  ${person.name}(${personGlobalScore}) = ${difference}`)
           
         });
 
@@ -61,10 +67,22 @@ $( document ).ready( function() {
             console.log ('Sorry. I could not find you a friend.'); 
         }
         else {
-        console.log ( ` Your Best Match is ${topFriend.name}`);
+           
+            $("#best-match").text(` Best Match : ${topFriend.name}`);
+           
+            if ( topFriend.photo.toLowerCase().search('facebook') > -1 ){
+                $('#match-result-modal').html(`<a href="${topFriend.photo}" target="_blank">${topFriend.name}</a>`);
+            }
+            else { 
+              $('#match-result-modal').html(`<img src=${topFriend.photo} alt="Photo of ${topFriend.name}">` +
+                                        `<p>${topFriend.name}</p>`);
+            }
+            $('#results-modal').modal(
+            { 
+                show : true
+            }); 
         }
          
-        //Returns the matched friend.  If more than one has the same score, return the first.
 
     }
     
