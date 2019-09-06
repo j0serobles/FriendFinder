@@ -13,11 +13,35 @@ var router  = express.Router();
 router.get ('/', function ( req, res ) {
 
     res.sendFile(path.join(__dirname, '../public/home.html'));
+    
+}); 
 
+router.get ('/img/:filename', function ( req, res ) {
+
+    res.sendFile(path.join(__dirname, '../public/' + req.params.filename));
+    
+});
+
+router.get ('/css/:filename', function ( req, res ) {
+
+    res.sendFile(path.join(__dirname, '../public/' + req.params.filename));
+    
+});  
+
+router.get ('/data/:filename', function ( req, res ) {
+
+    res.sendFile(path.join(__dirname, '../data/' + req.params.filename));
+    
+}); 
+
+router.get ('/javascript/:filename', function ( req, res ) {
+
+    res.sendFile(path.join(__dirname, '../javascript/' + req.params.filename));
+    
 }); 
 
 //Define the survey page route
-router.get ('/survey', function ( req, res) {
+router.all ('/survey', function ( req, res) {
 
    res.sendFile(path.join(__dirname, '../public/survey.html')); 
 
