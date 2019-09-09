@@ -4,6 +4,9 @@
 var path    = require( 'path' ); 
 var express = require( 'express' );
 
+// file system module to perform file operations
+const fs = require('fs');
+
 var htmlRoutes = require ('./app/routing/htmlRoutes.js')
 var apiRoutes = require ('./app/routing/apiRoutes.js')
 
@@ -22,6 +25,7 @@ app.use(express.json());
 
 app.use('/', htmlRoutes); 
 app.use('/api', apiRoutes); 
+
 
 // Starts the server to begin listening
 // =============================================================

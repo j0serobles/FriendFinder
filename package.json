@@ -4,7 +4,8 @@
   "description": "UCF BootCamp HW12 Node and Express",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jquery": "^3.4.1"
   },
   "devDependencies": {},
   "scripts": {

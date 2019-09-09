@@ -1,9 +1,16 @@
+/******************************************************************************/
+/* .FILENAME                                                                  */
+/*   survey.js                                                                */
+/* .WHAT                                                                      */
+/*   Front-end javascript code for the survey.html page.                      */
+/******************************************************************************/  
+
 $( document ).ready( function() { 
 
-    // var friends = loadFriends(); -- TODO: Read all friends from the data/friends.js file.
-    var persons = [];
+    // This is what happens when the user clicks the "Find Friend" button in the survey page. 
+    // The current person's information and answers are collected from the page, then the 
+    // API is called to find a match.  
 
-    // Attach callback to button that saves the data and kicks off the friend search.
     $("#find-friend-btn").on("click", function(event) {
 
         event.preventDefault(); // Preven default form submission.
@@ -14,8 +21,7 @@ $( document ).ready( function() {
             photo: $('#user-pic').val(),
             scores: []       
             }
-
-        
+      
         //Save the collection of answered questions into 'answers'
         var answers =  $( "input.form-check-input:checked" ); 
 
@@ -28,68 +34,48 @@ $( document ).ready( function() {
           });
       }
 
-      findFriend( newFriend , persons); 
-      persons.push( newFriend ) ;
+      // jQuery.post() method to invoke the API to post the new person's object.
+      // And kick off the friend matching process.  The API call should return
+      // the matched friend or null object. 
+      // ===========================================================================
+      $.post("/api/friends", newFriend ,
+      function( matchedPerson ) {
+
+        // matchedPerson is the match returned from the list of existing person objects.
+        // The API either returns one person object or null, when a match could not be found.
+        // ======================================================================================
+        
+        if ( !matchedPerson ) {
+            $("#best-match").text(` No Match Found. `); 
+            $('#match-result-modal').html(` Sorry.  No match was found. `);
+        }
+        else {
+           
+            $("#best-match").text(` Best Match : ${matchedPerson.name}`);
+           
+            if ( matchedPerson.photo.toLowerCase().search('facebook') > -1 ){
+                $('#match-result-modal').html(`<a href="${matchedPerson.photo}" target="_blank">${matchedPerson.name}</a>`);
+            }
+            else { 
+              $('#match-result-modal').html(`<img src=${matchedPerson.photo} alt="Photo of ${matchedPerson.name}">` +
+                                        `<p>${matchedPerson.name}</p>`);
+            }
+        }
+        
+        $('#results-modal').modal(
+        { 
+            show : true
+        }); 
+
+        // Clear the form when submitting
+        $("#user-name").val("");
+        $("#user-pic").val("");
+
+        // TODO: Clear the questions here
+
+      });
 
 
     });
       
 });
-
-    ///////////////////////////////////////////////////////////////////////////////////////
-    function findFriend ( currentUserObj, personsArray ) {
-
-        console.log (JSON.stringify(personsArray, '', 2)); 
-        var topFriend      = null;
-        var minDifference  = 40;  // Maximum possible difference between two persons is 40.
-                                  // (Min. Global Score = 10, Max. Global Score = 50). 
-        
-        
-        //Get the current user's global score:
-        var currentUserGlobalScore = getGlobalScore( currentUserObj.scores ); 
-
-        //Traverse the friends[] array, comparing each person's global score with with the current user's.
-        personsArray.forEach ( function ( person, index ) {
-          var personGlobalScore = getGlobalScore( person.scores ); 
-          var difference = Math.abs ( personGlobalScore - currentUserGlobalScore ) ; 
-        
-          //If the difference is less than the minimum found so far, this is the new 'top' friend.
-          if (difference <= minDifference) {
-              minDifference = difference;
-              topFriend     = person; 
-          }
-
-          //console.log ( `${currentUserObj.name}(${currentUserGlobalScore})   -  ${person.name}(${personGlobalScore}) = ${difference}`)
-          
-        });
-
-        if ( !topFriend) {
-            console.log ('Sorry. I could not find you a friend.'); 
-        }
-        else {
-           
-            $("#best-match").text(` Best Match : ${topFriend.name}`);
-           
-            if ( topFriend.photo.toLowerCase().search('facebook') > -1 ){
-                $('#match-result-modal').html(`<a href="${topFriend.photo}" target="_blank">${topFriend.name}</a>`);
-            }
-            else { 
-              $('#match-result-modal').html(`<img src=${topFriend.photo} alt="Photo of ${topFriend.name}">` +
-                                        `<p>${topFriend.name}</p>`);
-            }
-            $('#results-modal').modal(
-            { 
-                show : true
-            }); 
-        }
-         
-
-    }
-    
-    ///////////////////////////////////////////////////////////////////////////////////////
-    function getGlobalScore( scoresArray ) {
-
-        var globalScore = scoresArray.reduce( function (a,b) { return ( a + b ) },  0); 
-        return globalScore; 
-
-    }
