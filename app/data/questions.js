@@ -1,3 +1,9 @@
+// An array of strings with the questions to include in the questionnaire. 
+// This is exported as a module to be used by the survey logic. 
+// The idea is to have this in a separate module so it can be changed
+// without modifying the code. 
+
+//==========================================================================
 var questions = [
     "1) I act comfortably with others.",
     "2) I use flattery to get ahead.", 
@@ -10,3 +16,5 @@ var questions = [
     "9) I like to tidy up.", 
     "10) I get upset easily."
 ];
+
+module.exports.questions = questions; 

@@ -77,5 +77,18 @@ $( document ).ready( function() {
 
 
     });
+
+
+    // On page load, update the questions.
+    $.get( "/api/questions" , function( data ) {
+        var questionsArray = data.questions; 
+        // console.log ( JSON.stringify(questionsArray)); 
+        questionsArray.forEach ( function (question, index) {
+            console.log (index + " " + question ) ; 
+          $("#question-" + (index + 1)).attr("value", question ); 
+        });
+    
+    });
+
       
 });
