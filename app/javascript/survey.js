@@ -47,7 +47,7 @@ $( document ).ready( function() {
         
         if ( !matchedPerson ) {
             $("#best-match").text(` No Match Found. `); 
-            $('#match-result-modal').html(` Sorry.  No match was found. `);
+            $('#match-result-modal').html(` Sorry.  No match was found. You have been added.`);
         }
         else {
            
@@ -57,7 +57,7 @@ $( document ).ready( function() {
                 $('#match-result-modal').html(`<a href="${matchedPerson.photo}" target="_blank">${matchedPerson.name}</a>`);
             }
             else { 
-              $('#match-result-modal').html(`<img src=${matchedPerson.photo} alt="Photo of ${matchedPerson.name}">` +
+              $('#match-result-modal').html(`<img  class="img-fluid" src=${matchedPerson.photo} alt="Photo of ${matchedPerson.name}">` +
                                         `<p>${matchedPerson.name}</p>`);
             }
         }
@@ -70,6 +70,7 @@ $( document ).ready( function() {
         // Clear the form when submitting
         $("#user-name").val("");
         $("#user-pic").val("");
+        $(".form-check-input").prop("checked", false);
 
         // TODO: Clear the questions here
 
