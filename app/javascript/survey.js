@@ -98,12 +98,12 @@ $( document ).ready( function() {
     
         var questionRow = "";
 
-        questionRow  = `<div class="form-group"><div class="row border mt-3 bg-light"><div class="col-sm-6"> ` + 
+        questionRow  = `<div class="form-group"><div class="row border mt-3 bg-light"><div class="col-12 col-sm-6"> ` + 
                        `<input type="text" readonly class="form-control-plaintext" id="question-${questionIndex}"` +
                        ` value="${questionText}"></div>`;
         
         for ( var i = 1; i <= 5 ; i++) {
-            questionRow += `<div class="col-sm-1"><div class="form-check form-check-inline">` +
+            questionRow += `<div class="col-1"><div class="form-check form-check-inline">` +
                     ` <input class="form-check-input" type="radio" name="inlineRadioOptions${questionIndex}"` +
                     ` id="inlineRadio${questionIndex}-${i}" value="${i}"><label class="form-check-label"`     +
                     ` for="inlineRadio${questionIndex}-${i}">${i}</label></div></div>`;
