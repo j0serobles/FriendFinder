@@ -16,12 +16,6 @@ const fs    = require('fs');
 
 var router  = express.Router(); 
 
-//Middleware that is specific to htmlRoutes
-// router.use ( function timelog ( req, res, next) {
-//     console.log('Time : ' , Date.now()); 
-//     next(); 
-// });
-
 
 // API Routes
 // ==============================================================================
@@ -29,7 +23,7 @@ var router  = express.Router();
 // /api/friends GET route
 // ==============================================================================
 router.get('/friends', function ( req, res ) {
-    console.log ("Return All Possible Friends");
+    //console.log ("Return All Possible Friends");
     res.json(persons); 
 }); 
 
@@ -56,7 +50,7 @@ router.post('/friends', function ( req, res) {
 ///////////////////////////////////////////////////////////////////////////////////////
 function findFriend ( currentUserObj ) {
  
-    console.log ("findFriend(): " + JSON.stringify(currentUserObj, '', 2))  ; 
+    //console.log ("findFriend(): " + JSON.stringify(currentUserObj, '', 2))  ; 
     
     var topFriend      = null;
     var minDifference  = 40;    // Maximum possible difference between two persons is 40.
@@ -65,10 +59,10 @@ function findFriend ( currentUserObj ) {
     //Get the current user's global score:
     var currentUserGlobalScore = getGlobalScore( currentUserObj.scores );   
     
-    console.log( "Current Global Score "  + currentUserGlobalScore); 
+    //console.log( "Current Global Score "  + currentUserGlobalScore); 
 
     //Traverse the persons array, comparing each person's global score with with the current user's.
-    console.log ( JSON.stringify( persons) ) ; 
+    //console.log ( JSON.stringify( persons) ) ; 
 
     persons.forEach ( function ( person, index ) {
         var personGlobalScore = getGlobalScore( person.scores ); 

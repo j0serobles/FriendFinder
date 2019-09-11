@@ -24,270 +24,31 @@
         <![endif]-->
 
 
-        <div class="container-fluid">
+        <div class="container">
             <h3 class="text-center">Find A <span class="blue-text">Friend</span> <span class="red-text">O</span>nline! Survey</h3>
             
 
-                <form>
+                <form id="surveyForm">
 
                     <label for="user-name">Your Name:</label>
                     <input id="user-name" class="form-control form-control-lg" type="text" placeholder="Enter Your Name">
 
-                    <label for="user-pic">Your Picure Web Address or Facebook Profile: </label>
+                    <label for="user-pic">Your Picure's Web Address or Facebook Profile: </label>
                     <input id="user-pic" class="form-control form-control-lg" type="text" placeholder="Enter your picture file web address or your FaceBook Profile">
 
+                    <div id="questionHeader" class="row border mt-3 bg-light">
+                        <div class="col-sm-1 offset-sm-6 pl-0">
+                            <label class="form-check-label" for="inlineRadio1-1">Strongly Disagree</label>
+                        </div>
+                        <div class="col-sm-1 offset-sm-3 pl-0">
+                            <label class="form-check-label" for="inlineRadio1-5">Totally Agree </label>
+                        </div>
+                    </div class="row">
+        
 
-                    <!-- Question 1 -->
-                  <div class="form-group">
-                    <input type="text" readonly class="form-control-plaintext" id="question-1" value="What is the meaning of life?">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1-1" value="1">
-                        <label class="form-check-label" for="inlineRadio1-1">1</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1-2" value="2">
-                        <label class="form-check-label" for="inlineRadio1-2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1-3" value="3">
-                        <label class="form-check-label" for="inlineRadio1-3">3 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1-4" value="4" >
-                        <label class="form-check-label" for="inlineRadio1-4">4 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1-5" value="5" > 
-                        <label class="form-check-label" for="inlineRadio1-5">5 </label>
-                    </div>
-                  </div>
-
-                <!-- Question 2 -->
-                <div class="form-group">
-                    <input type="text" readonly class="form-control-plaintext" id="question-2" value="What is the meaning of life?">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2-1" value="1">
-                        <label class="form-check-label" for="inlineRadio2-1">1</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2-2" value="2">
-                        <label class="form-check-label" for="inlineRadio2-2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2-3" value="3">
-                        <label class="form-check-label" for="inlineRadio2-3">3 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2-4" value="4" >
-                        <label class="form-check-label" for="inlineRadio2-4">4 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2-5" value="5" > 
-                        <label class="form-check-label" for="inlineRadio2-5">5 </label>
-                    </div>
-                </div>
-
-                <!-- Question 3 -->
-                <div class="form-group">
-                    <input type="text" readonly class="form-control-plaintext" id="question-3" value="What is the meaning of life?">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3-1" value="1">
-                        <label class="form-check-label" for="inlineRadio3-1">1</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3-2" value="2">
-                        <label class="form-check-label" for="inlineRadio3-2">2</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3-3" value="3">
-                        <label class="form-check-label" for="inlineRadio3-3">3 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3-4" value="4" >
-                        <label class="form-check-label" for="inlineRadio3-4">4 </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3-5" value="5" > 
-                        <label class="form-check-label" for="inlineRadio3-5">5 </label>
-                    </div>
-                    </div>
-
-                  <!-- Question 4 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-4" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4-1" value="1">
-                            <label class="form-check-label" for="inlineRadio4-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4-2" value="2">
-                            <label class="form-check-label" for="inlineRadio4-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4-3" value="3">
-                            <label class="form-check-label" for="inlineRadio4-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio4-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio4-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio4-5">5 </label>
-                        </div>
-                      </div>
-
-                  <!-- Question 5 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-5" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5-1" value="1">
-                            <label class="form-check-label" for="inlineRadio5-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5-2" value="2">
-                            <label class="form-check-label" for="inlineRadio5-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5-3" value="3">
-                            <label class="form-check-label" for="inlineRadio5-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio5-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio5-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio5-5">5 </label>
-                        </div>
-                      </div>
-
-                  <!-- Question 6 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-6" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6-1" value="1">
-                            <label class="form-check-label" for="inlineRadio6-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6-2" value="2">
-                            <label class="form-check-label" for="inlineRadio6-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6-3" value="3">
-                            <label class="form-check-label" for="inlineRadio6-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio6-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio6-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio6-5">5 </label>
-                        </div>
-                      </div>
-
-                <!-- Question 7 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-7" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio7-1" value="1">
-                            <label class="form-check-label" for="inlineRadio7-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio7-2" value="2">
-                            <label class="form-check-label" for="inlineRadio7-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio7-3" value="3">
-                            <label class="form-check-label" for="inlineRadio7-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio7-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio7-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio7-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio7-5">5 </label>
-                        </div>
-                      </div>
-
-                  <!-- Question 8 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-8" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio8-1" value="1">
-                            <label class="form-check-label" for="inlineRadio8-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio8-2" value="2">
-                            <label class="form-check-label" for="inlineRadio8-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio8-3" value="3">
-                            <label class="form-check-label" for="inlineRadio8-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio8-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio8-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio8-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio8-5">5 </label>
-                        </div>
-                      </div>
-
-                 <!-- Question 9 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-9" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio9-1" value="1">
-                            <label class="form-check-label" for="inlineRadio9-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio9-2" value="2">
-                            <label class="form-check-label" for="inlineRadio9-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio9-3" value="3">
-                            <label class="form-check-label" for="inlineRadio9-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio9-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio9-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio9-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio9-5">5 </label>
-                        </div>
-                      </div>
-
-                  <!-- Question 10 -->
-                  <div class="form-group">
-                        <input type="text" readonly class="form-control-plaintext" id="question-10" value="What is the meaning of life?">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio10-1" value="1">
-                            <label class="form-check-label" for="inlineRadio10-1">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio10-2" value="2">
-                            <label class="form-check-label" for="inlineRadio10-2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio10-3" value="3">
-                            <label class="form-check-label" for="inlineRadio10-3">3 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio10-4" value="4" >
-                            <label class="form-check-label" for="inlineRadio10-4">4 </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio10-5" value="5" > 
-                            <label class="form-check-label" for="inlineRadio10-5">5 </label>
-                        </div>
-                      </div>
+                   <!-- Questions will be appended here dynamically via jQuery -->
                   
-                <button id="find-friend-btn" type="submit" class="mx-auto d-block mt-3 btn btn-primary">Find Friend!</button>
+                  <button id="find-friend-btn" type="submit" class="mx-auto d-block mt-3 btn btn-primary">Find Friend!</button>
                 </form>
         </div>
 

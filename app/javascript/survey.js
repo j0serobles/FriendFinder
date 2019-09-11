@@ -80,16 +80,40 @@ $( document ).ready( function() {
     });
 
 
-    // On page load, update the questions.
+    // On page load, render and update the questions.
     $.get( "/api/questions" , function( data ) {
         var questionsArray = data.questions; 
         // console.log ( JSON.stringify(questionsArray)); 
         questionsArray.forEach ( function (question, index) {
             console.log (index + " " + question ) ; 
-          $("#question-" + (index + 1)).attr("value", question ); 
+            renderRow(question, index + 1); 
+           
+ 
         });
     
     });
+
+    // Render each question in the bootstrap row using jQuery:
+    function renderRow ( questionText, questionIndex ) { 
+    
+        var questionRow = "";
+
+        questionRow  = `<div class="form-group"><div class="row border mt-3 bg-light"><div class="col-sm-6"> ` + 
+                       `<input type="text" readonly class="form-control-plaintext" id="question-${questionIndex}"` +
+                       ` value="${questionText}"></div>`;
+        
+        for ( var i = 1; i <= 5 ; i++) {
+            questionRow += `<div class="col-sm-1"><div class="form-check form-check-inline">` +
+                    ` <input class="form-check-input" type="radio" name="inlineRadioOptions${questionIndex}"` +
+                    ` id="inlineRadio${questionIndex}-${i}" value="${i}"><label class="form-check-label"`     +
+                    ` for="inlineRadio${questionIndex}-${i}">${i}</label></div></div>`;
+        }
+
+        questionRow += `</div><!-- End Row --></div>`;
+
+        $("#questionHeader").after(questionRow);
+
+    }
 
       
 });
