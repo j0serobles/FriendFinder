@@ -21,15 +21,20 @@ The application will allow the user to fill a simple survey and based on the ans
 
 ### How To Run <a name="howToRun"></a>
 The application has been deployed to Heroku and is accessible [here](https://secret-waters-89001.herokuapp.com)
-Upon arriving at the page, the following page is shown:
+
+Upon landing, the home page is displayed:
+
 ![Home Page](friendfinder1.JPG)
+
 The user clicks on the "Start Survey" button to access the "Survey" form.
 In the survey form, the user fills out their name, and a link to the URL for their picture.
-![Survey Page](friendfinder2.JPG)
-Each question has 5 radio checkboxes, where  1 = Strongly Disagree with the question posed and 5 = Strongly agree with the question posed. 
-The user then clicks the "Find Friend" button, and the application does its magic, finding a matching friend in the list of people previously stored in the program's memory. 
-![Best Match](friendfinder3.JPG)
 
+![Survey Page](friendfinder2.JPG)
+
+Each question has a statement and 5 radio checkboxes, where  1 = Strongly Disagree with the statement posed and 5 = Strongly agree with the statement posed. 
+The user then clicks the "Find Friend" button, and the application does its magic, finding a matching friend in the list of people previously stored in the program's memory. 
+
+![Best Match](friendfinder3.JPG)
 
 
 
